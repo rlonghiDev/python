@@ -1,0 +1,1 @@
+print("Os dias em que o céu está azul são mais bonitos")

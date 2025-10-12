@@ -1,0 +1,6 @@
+gostar = int(input("Digite 1 se você gosta de Python ou 2 se não gosta da linguagem\n"))
+
+if gostar == 1:
+    print("Que bom você gosta da linguagem Python !")
+else:
+    print("Se esforce em aprender ! É uma liguagem muito fácil de usar")

@@ -1,0 +1,15 @@
+Desafio para o fim de semana:
+
+No mesmo projeto, crie uma biblioteca chamada interface que tenha uma opcao de mostrar menu.
+(se voce faltou, faça uma copia do meu repositorio para conseguir fazer o exercicio: https://github.com/andersonfontes/aulas_py_bkend25)
+
+No menu tera opcoes como abaixo:
+Digite a opção desejada:
+1- Calcular o dobro
+2- Calcular o triplo
+3- Calcular o quadrado
+4- Finalizar
+
+Implemente tambem a nova funcao quadrado na biblioteca calculo 
+
+Mude o programa principal pra mostrar o menu em loop, e excute a função escolhida pelo usuario até que ele escolha 4 e finalize o programa

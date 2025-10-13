@@ -1,0 +1,4 @@
+{'nome': 'Livro teste 1', 'autor': 'Autor 1', 'Quantidade disponível': 10, 'Quantidade em uso': 0, 'Registro':1}
+{'nome': 'Livro teste 2', 'autor': 'Autor 2', 'Quantidade disponível': 1, 'Quantidade em uso': 0, 'Registro':2}
+{'nome': 'Estrelas', 'autor': 'Maria', 'Quantidade disponível': 2, 'Quantidade em uso': 0, 'Registro': 3}
+{'nome': 'Sol', 'autor': 'João', 'Quantidade disponível': 1, 'Quantidade em uso': 0, 'Registro': 4}

@@ -1,0 +1,4 @@
+{'nome': 'PrimeiroLeitor', 'escola': 'Senai', 'turma': 'BackEnd', 'ano': 2025}
+{'nome': 'Outro Leitor', 'escola': 'Senai mooca', 'turma': 'Eletricista', 'ano': 2025, 'Registro': ''}
+{'nome': 'Joao da Silva', 'escola': 'Senai Brás', 'turma': 'Mecânica', 'ano': 2025, 'Registro': 1}
+{'nome': 'Maria', 'escola': 'Senai São Caetano', 'turma': 'Python', 'ano': 2025, 'Registro': 2}

@@ -10,7 +10,9 @@ while True:
           2 - Cadastrar um leitor
           3 - Cadastrar um empréstimo 
           4 - Imprimir um relatório
-          5 - Sair """)
+          5 - Sair 
+
+          """)
     
     #Recebe a escolha e verifica opção válida
     menu_principal = input("Digite a opção desejada\n")
@@ -70,8 +72,8 @@ while True:
         livro_dicionario = {}
         livro_dicionario['nome'] = nome
         livro_dicionario['autor'] = autor
-        livro_dicionario['Quantidade disponível'] = qde_disp
-        livro_dicionario['Quantidade em uso'] = qde_uso
+        livro_dicionario['Qde_disp'] = qde_disp
+        livro_dicionario['Qde_uso'] = qde_uso
         livro_dicionario['Registro'] = num_registro
 
         livro_str = str(livro_dicionario) + '\n'

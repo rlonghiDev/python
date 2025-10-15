@@ -1,4 +1,4 @@
-{'nome': 'Livro teste 1', 'autor': 'Autor 1', 'Quantidade disponível': 10, 'Quantidade em uso': 0, 'Registro':1}
-{'nome': 'Livro teste 2', 'autor': 'Autor 2', 'Quantidade disponível': 1, 'Quantidade em uso': 0, 'Registro':2}
-{'nome': 'Estrelas', 'autor': 'Maria', 'Quantidade disponível': 2, 'Quantidade em uso': 0, 'Registro': 3}
-{'nome': 'Sol', 'autor': 'João', 'Quantidade disponível': 1, 'Quantidade em uso': 0, 'Registro': 4}
+{'nome': 'Livro teste 1', 'autor': 'Autor 1', 'Qde_disp': 10, 'Qde_uso': 0, 'Registro':1}
+{'nome': 'Livro teste 2', 'autor': 'Autor 2', 'Qde_disp': 1, 'Qde_uso': 0, 'Registro':2}
+{'nome': 'Estrelas', 'autor': 'Maria', 'Qde_disp': 2, 'Qde_uso': 0, 'Registro': 3}
+{'nome': 'Sol', 'autor': 'João', 'Qde_disp': 1, 'Qde_uso': 0, 'Registro': 4}

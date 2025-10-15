@@ -2,36 +2,37 @@
 
 def monta_string(dict):
     linha1 = '#' * 50
-    str2 = 'Título: '+ dict['nome']
-    linha2 = '#' + str2.center(48) + '#'
-    str3 = 'Autor: '+ dict['autor']
-    linha3 = '#' + str3.center(48) + '#'
-    str4 = 'Disponível: '+ str(dict['Qde_disp'])
-    linha4 = '#' + str4.center(48) + '#'
+    espacamento = '#' + ' ' * 48 + '#'
+    str21 = 'Título: ' # String [linha2] [posição1]
+    str22 = dict['nome'] # String [linha2] [posição1]
+    linha2 = '#' + str21.rjust(24) + str22.ljust(24) + '#'
+    str31 = 'Autor: '
+    str32 = dict['autor']
+    linha3 = '#' + str31.rjust(24) + str32.ljust(24) + '#'
+    str41 = 'Disponível: '
+    str42 = str(dict['Qde_disp'])
+    linha4 = '#' + str41.rjust(24) + str42.ljust(24) + '#'
+    str51 = 'Registro: '
+    str52 = str(dict['Registro'])
+    linha5 = '#' + str51.rjust(24) + str52.ljust(24) + '#'
 
-    print(linha1 +'\n'+ linha2 + '\n' + linha3)
-
-
+    ficha = (linha1 +'\n'+ espacamento + '\n' + linha2 + '\n' + linha3 + '\n' + linha4 + '\n' + linha5 + '\n' + espacamento + '\n' + linha1 + '\n')
+    return ficha
 
 
 with open("livros.txt","r") as arq:
+    
     for linha in arq:
         dicionario = eval(linha)
-        monta_string(dicionario)
-        # print('#' * 30)
-        # print('#'+ ' ' * 28 + '#')
-        # print(f'#      Título: {dicionario['nome']}  #')
-        # print(f'#       Autor: {dicionario['autor']} #')
-        # print(f'# Disponíveis: {dicionario['Quantidade disponível']}     # ')
-        
-        
-        
-        
-        
-        # for (chave,valor) in (dicionario.items()):
-        #     print(f"{chave},{valor}")
+        ficha = monta_string(dicionario)
+            
+        print(ficha)
+            
         
 
+
+
+        
 #tabulate
 
 arq.close()

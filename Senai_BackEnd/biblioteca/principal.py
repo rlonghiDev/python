@@ -121,3 +121,129 @@ while True:
     ### Relatório Livros ###
 
     
+    def monta_string_livro(dict):
+        linha1 = '#' * 44
+        espacamento = '#' + ' ' * 42 + '#'
+        str21 = 'Título: ' # String [linha2] [posição1]
+        str22 = dict['nome'] # String [linha2] [posição1]
+        linha2 = '#' + str21.rjust(21) + str22.ljust(21) + '#'
+        str31 = 'Autor: '
+        str32 = dict['autor']
+        linha3 = '#' + str31.rjust(21) + str32.ljust(21) + '#'
+        str41 = 'Disponível: '
+        str42 = str(dict['Qde_disp'])
+        linha4 = '#' + str41.rjust(21) + str42.ljust(21) + '#'
+        str51 = 'Registro: '
+        str52 = str(dict['Registro'])
+        linha5 = '#' + str51.rjust(21) + str52.ljust(21) + '#'
+
+        ficha = (linha1 +'\n'+ espacamento + '\n' + linha2 + '\n' + linha3 + '\n' + linha4 + '\n' + linha5 + '\n' + espacamento + '\n' + linha1 + '\n')
+        return ficha
+
+
+   
+    def relatorio_livros():
+        with open("livros.txt","r") as arq:
+            
+            for linha in arq:
+                dicionario = eval(linha)
+                ficha = monta_string_livro(dicionario)
+                    
+                print(ficha)
+            
+            arq.close()#Fecha arquivo
+
+    ####### Final Relatório Livros ####
+
+
+    ##### Relatório de Leitores ####
+
+    def monta_string_leitor(dict):
+        linha1 = '#' * 44
+        espacamento = '#' + ' ' * 42 + '#'
+        str21 = 'Nome: ' # String [linha2] [posição1]
+        str22 = dict['nome'] # String [linha2] [posição1]
+        linha2 = '#' + str21.rjust(21) + str22.ljust(21) + '#'
+        str31 = 'Escola: '
+        str32 = dict['escola']
+        linha3 = '#' + str31.rjust(21) + str32.ljust(21) + '#'
+        str41 = 'Turma: '
+        str42 = str(dict['turma'])
+        linha4 = '#' + str41.rjust(21) + str42.ljust(21) + '#'
+        str51 = 'Registro: '
+        str52 = str(dict['Registro'])
+        linha5 = '#' + str51.rjust(21) + str52.ljust(21) + '#'
+        str61 = 'Ano: '
+        str62 = str(dict['ano'])
+        linha6 = '#' + str61.rjust(21) + str62.ljust(21) + '#'
+
+        ficha = (linha1 +'\n'+ espacamento + '\n' + linha2 + '\n' + linha3 + '\n' + linha4 + '\n' + linha5 + '\n' + linha6 + '\n' + espacamento + '\n' + linha1 + '\n')
+        return ficha
+
+
+   
+    def relatorio_leitores():
+        with open("leitores.txt","r") as arq:
+            
+            for linha in arq:
+                dicionario = eval(linha)
+                ficha = monta_string_leitor(dicionario)
+                    
+                print(ficha)
+            
+            arq.close()#Fecha arquivo
+
+
+    if menu_principal == '4':
+
+        while True:
+
+            print("""
+                Digite 1 para relatório de livros
+                Digite 2 para relatório de leitores
+                Digite 3 para relatório de empréstimos
+                Digite 4 para voltar ao menu principal
+
+                """)
+
+            outra_escolha = input("Informe a opção desejada: \n")
+        
+
+            if outra_escolha == '4':
+                break
+
+            if outra_escolha == '1':
+                relatorio_livros()
+
+            if outra_escolha == '2':
+                relatorio_leitores()
+
+    ##### Final Relatório Leitores ######
+
+    ### Cadastro de Empréstimo ####
+
+     if menu_principal == '3':
+
+        while True:
+
+            print("""
+
+                Digite 1 para informar o empréstimo
+                Digite 2 para informar devolução
+                Digite 3 para voltar
+                  
+                """)
+            
+            opcao = input("Informe o que deseja fazer")
+
+            if opcao == '5':
+                break
+
+            if opcao == '1': # Informar Empréstimo 
+
+
+
+            if opcao == '2':
+
+                
+

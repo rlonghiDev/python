@@ -17,7 +17,7 @@ while True:
           Escolha a opção desejada:
           1 - Cadastrar um livro
           2 - Cadastrar um leitor
-          3 - Cadastrar um empréstimo 
+          3 - Menu empréstimo 
           4 - Imprimir um relatório
           5 - Sair 
 
@@ -76,7 +76,7 @@ while True:
                   
                 """)
             
-            opcao = input("Informe o que deseja fazer")
+            opcao = input("Informe o que deseja fazer\n")
 
             if opcao == '3':
                 break
@@ -87,13 +87,14 @@ while True:
 
 
             if opcao == '1': # Informar Empréstimo 
-                registro_leitor = input("Digite o número de registro do Leitor")
-                registro_livro = input("Digite o número de Registro do Livro")
+                registro_leitor = input("Digite o número de registro do Leitor\n")
+                registro_livro = input("Digite o número de Registro do Livro\n")
                 cartao_emprestimo = emprestimos.realiza_emprestimo(registro_leitor,registro_livro)
                 
                 
             if opcao == '2':
-                registro_emprestimo = input("informe o código do impréstimo que será encerrado")
+                emprestimos.apaga_emprestimo()
+                
                 #cartão_emprestimo
 
 

@@ -2,6 +2,38 @@ import ultimo_registro
 import json
 import datetime
 
+
+#### Limpa linha em branco #####
+
+def limpa_linha_em_branco(arquivo):
+    
+    if arquivo == "leitor":
+        arquivo_para_abrir = "leitores.txt"
+    
+    if arquivo == "livro":
+        arquivo_para_abrir = "livros.txt"
+        
+    if arquivo == "emprestimo":
+        arquivo_para_abrir = "emprestimos.txt"
+        
+    with open(arquivo_para_abrir, "r") as arq: #modo leitura
+        linhas = arq.readlines()
+    arq.close()
+        
+    linhas_com_conteudo = []
+    
+    for linha in linhas:
+        if linha.strip():
+            linhas_com_conteudo.append(linha)
+            
+    
+    with open(arquivo_para_abrir,"w") as arq:
+        for linha in linhas_com_conteudo:
+            arq.write(linha)
+    
+    arq.close()
+    
+
 def monta_string_leitor(dict):
         linha1 = '#' * 44
         espacamento = '#' + ' ' * 42 + '#'
@@ -27,6 +59,9 @@ def monta_string_leitor(dict):
 
    
 def relatorio_leitores():
+    
+    limpa_linha_em_branco('leitor') #Função para eliminar linhas em branco
+    
     with open("leitores.txt","r") as arq:
         
         for linha in arq:
@@ -61,6 +96,9 @@ def monta_string_livro(dict):
 
    
 def relatorio_livros():
+    
+    limpa_linha_em_branco('livro')
+    
     with open("livros.txt","r") as arq:
         
         for linha in arq:
@@ -76,8 +114,10 @@ def relatorio_livros():
 
 ##### Relatório de Empréstimo #####
 
-#### String Emprestimo ####
-def busca_info(Registro, tipo):
+
+def busca_info(Registro, tipo, chamada):
+    
+    arquivo_para_ler = ''  
     
     if tipo == 'leitor':
         arquivo_para_ler = "leitores.txt"
@@ -93,16 +133,31 @@ def busca_info(Registro, tipo):
         for linha in arq:
             dicionario = eval(linha)
             
-            if dicionario["Registro"] == Registro:
+            procura = str(dicionario['Registro'])
+            procura = procura.strip()
+            Registro = str(Registro)
+            Registro = Registro.strip()
+            
+            if procura == Registro and chamada == 1:
+                nome = dicionario
+                break
+            
+            if procura == Registro and chamada == 0:
                 nome = dicionario["nome"]
+                break
                 
-    arq.close()#Fecha arquivo
+            else:
+                nome = "Nao localizado"
     
+    arq.close()#Fecha arquivo            
+    
+
     return nome
 
 
     
 
+#### String Emprestimo ####
 
 def monta_string_emprestimo(dict):
     linha1 = '#' * 44
@@ -110,10 +165,10 @@ def monta_string_emprestimo(dict):
     titulo = 'EMPRESTIMO DE LIVRO'
     linha1a = '#' + titulo.center(42) + '#'
     str21 = 'Leitor: ' # String [linha2] [posição1]
-    str22 = busca_info(int(dict["leitor"]),"leitor")
+    str22 = busca_info(int(dict["leitor"]),"leitor",0)
     linha2 = '#' + str21.rjust(21) + str22.ljust(21) + '#'
     str31 = 'livro: '
-    str32 = busca_info(int(dict["livro"]),"livro")
+    str32 = busca_info(int(dict["livro"]),"livro",0)
     linha3 = '#' + str31.rjust(21) + str32.ljust(21) + '#'
     str41 = 'Emprestado em: '
     str42 = str(dict["data"])
@@ -128,6 +183,8 @@ def monta_string_emprestimo(dict):
 
 
 def relatorio_emprestimo():
+    
+    limpa_linha_em_branco('emprestimo')
     
     with open("emprestimos.txt","r") as arq:
         

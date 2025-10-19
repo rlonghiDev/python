@@ -48,7 +48,42 @@ def realiza_emprestimo(registro_leitor,registro_livro):
     
 
 
+def apaga_linha(Registro):
+    Registro = "Registro: " + str(Registro)
+    indice_para_apagar = ''
 
+    with open("emprestimos.txt","r") as arq: #Abre arquivo no modo leitura
+        lista_de_linhas = arq.readlines()
+        
+        arq.close() #Fecha arquivo
+        
+        for indice,linha in enumerate(lista_de_linhas):
+            
+            linha = linha.replace('"','')
+            linha = linha.replace("'","")
+            
+            
+            if Registro in linha:
+                indice_para_apagar = indice
+            
+            
+            
+        ##Remove emprestimo se o registro foi localizado
+        if type(indice_para_apagar) is int:
+            lista_de_linhas.pop(indice_para_apagar)
+            print("Empréstimo encerrado com sucesso")
+            
+        else:
+            print("Empréstimo não foi localizado")
+        
+    with open("emprestimos.txt","w") as arq: #Abre arquivo modo escrita
+            
+        for linha in lista_de_linhas:
+            linha.strip() # Tira eventuais espaços em branco no inicio ou final 
+            #linha = linha + '\n' #Coloca a próxima inserção na linha abaixo
+            arq.write(linha)
+        
+        arq.close()
 
 
 
@@ -56,10 +91,18 @@ def realiza_emprestimo(registro_leitor,registro_livro):
 
 def apaga_emprestimo():
     relatorios.relatorio_emprestimo()
-    Registro = input("Digite o número do empréstimo que será encerrado")
-    ficha_emprestimo = relatorios.busca_info(Registro,"Emprestimo")
+    Registro = input("Digite o número do empréstimo que será encerrado\n")
+    registro_emprestimo = relatorios.busca_info(Registro,"emprestimo",1)
+    ficha_emprestimo = relatorios.monta_string_emprestimo(registro_emprestimo)
+    
     print(ficha_emprestimo)
-    confirma = input("Confirma encerramento desse empréstimo ? s/n ")
+    
+    if ficha_emprestimo != "Nao localizado":
+        confirma = input("Confirma encerramento desse empréstimo ? s/n ")
+    else:
+        print("Emprestimo Não localizado\n")
+        confirma = 'n'
+    
     if confirma == 's':
         apaga_linha(Registro)
     

@@ -1,3 +1,88 @@
+import datetime
+
+def busca_info(Registro, tipo):
+    
+    arquivo_para_ler = ''  
+    
+    if tipo == 'leitor':
+        arquivo_para_ler = "leitores.txt"
+        
+    if tipo == 'livro':
+        arquivo_para_ler = "livros.txt"
+        
+    if tipo == 'emprestimo':
+        arquivo_para_ler = "emprestimos.txt"
+        
+    with open(arquivo_para_ler,"r") as arq:
+        
+        for linha in arq:
+            dicionario = eval(linha)
+        
+            procura = str(dicionario['Registro'])
+            procura = procura.strip()
+            Registro = Registro.strip()
+            
+            if procura == Registro:
+                nome = dicionario
+                break
+                
+            else:
+                nome = "Nao localizado"
+    
+    arq.close()#Fecha arquivo            
+    
+    
+    print("O que foi captado:",nome)
+
+Registro = '9'
+tipo = 'emprestimo'
+
+busca_info(Registro, tipo)
+
+
+# Registro = '"Registro": 2'
+# indice_para_apagar = ''
+
+# with open("emprestimos.txt","r") as arq: #Abre arquivo no modo leitura
+#     lista_de_linhas = arq.readlines()
+    
+#     arq.close() #Fecha arquivo
+    
+#     for indice,linha in enumerate(lista_de_linhas):
+#         if Registro in linha:
+#             indice_para_apagar = indice
+        
+#     print(type(indice_para_apagar))        
+#     ##Remove emprestimo localizado se o registro foi localizado
+#     if type(indice_para_apagar) is int:
+#         lista_de_linhas.pop(indice_para_apagar)
+#         print("Empréstimo encerrado com sucesso")
+#     else:
+#         print("Empréstimo não foi localizado")
+    
+# with open("emprestimos.txt","w") as arq: #Abre arquivo modo escrita
+        
+#     for linha in lista_de_linhas:
+#         linha.strip() # Tira eventuais espaços em branco no inicio ou final 
+#         #linha = linha + '\n' #Coloca a próxima inserção na linha abaixo
+#         arq.write(linha)
+    
+#     arq.close()
+    
+        
+        
+    
+    
+    
+    
+    
+            
+
+
+
+
+
+
 
 # import json
 
@@ -25,15 +110,17 @@
 #     return json.loads(registro) 
 
 
-from datetime import date
+
+####### Formatação de Data #####
+# from datetime import date
             
-hoje_BD = date.today()
-hoje_BD = str(hoje_BD)
-print(hoje_BD)
-ano = hoje_BD[0:4]
-mes = hoje_BD[5:7]
-dia = hoje_BD[8:10]
-print(f"{dia}/{mes}/{ano}")
+# hoje_BD = date.today()
+# hoje_BD = str(hoje_BD)
+# print(hoje_BD)
+# ano = hoje_BD[0:4]
+# mes = hoje_BD[5:7]
+# dia = hoje_BD[8:10]
+# print(f"{dia}/{mes}/{ano}")
 
 
 

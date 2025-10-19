@@ -19,7 +19,7 @@ def procura_ultimo_registro(tipo_procura):
 
         posicao = registro.find('Registro')
         tamanho = len(registro)
-        print("Posição:",posicao,"Tamanho:",tamanho)
+        
 
         reg = '0'
         trecho_final = registro[posicao:tamanho]

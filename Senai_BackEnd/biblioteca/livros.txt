@@ -8,3 +8,5 @@
 {"nome": "Morte vida severina", "autor": "Graciliano Ramos", "Qde_disp": 1, "Qde_uso": 0, "Registro": 8}
 {"nome": "Reflexoes da juventude", "autor": "Manuel carvalho", "Qde_disp": 1, "Qde_uso": 0, "Registro": 9}
 {"nome": "Ceu Azul", "autor": "Jose Saramago", "Qde_disp": 2, "Qde_uso": 0, "Registro": 10}
+{"nome": "Fundamentos de Python", "autor": "Antonio Jos\u00e9 Silva", "Qde_disp": 2, "Qde_uso": 0, "Registro": 11}
+{"nome": "Ultimo Moicano", "autor": "George Smith", "Qde_disp": 1, "Qde_uso": 0, "Registro": 12}

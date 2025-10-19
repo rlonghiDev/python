@@ -1,0 +1,2 @@
+{"leitor": "3", "livro": "2", "data": datetime.date(2025, 10, 18), "Registro": 2}
+{'leitor': '4', 'livro': '5', 'data': datetime.date(2025, 10, 18), 'Registro': 3}

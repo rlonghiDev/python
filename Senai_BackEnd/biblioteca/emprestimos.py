@@ -2,6 +2,7 @@ import json
 import datetime
 import ultimo_registro
 import relatorios
+import avaliacao_livro
 
 def realiza_emprestimo(registro_leitor,registro_livro):
                 
@@ -93,9 +94,13 @@ def apaga_emprestimo():
     relatorios.relatorio_emprestimo()
     Registro = input("Digite o número do empréstimo que será encerrado\n")
     registro_emprestimo = relatorios.busca_info(Registro,"emprestimo",1)
+    registro_livro = registro_emprestimo["livro"]
     ficha_emprestimo = relatorios.monta_string_emprestimo(registro_emprestimo)
     
+    
     print(ficha_emprestimo)
+    
+    #print("Registro livro: ",registro_livro)
     
     if ficha_emprestimo != "Nao localizado":
         confirma = input("Confirma encerramento desse empréstimo ? s/n ")
@@ -104,6 +109,7 @@ def apaga_emprestimo():
         confirma = 'n'
     
     if confirma == 's':
+        avaliacao_livro.avaliacao_livro(registro_livro)
         apaga_linha(Registro)
     
     if confirma == 'n':

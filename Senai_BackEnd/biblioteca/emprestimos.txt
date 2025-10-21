@@ -1,10 +1,6 @@
-{"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 1}
 {"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 3}
 {"leitor": "4", "livro": "5", "data": datetime.date(2025, 10, 18), "Registro": 4}
 {'leitor': '2', 'livro': '3', 'data': datetime.date(2025, 10, 19), 'Registro': 5}
 {'leitor': '3', 'livro': '2', 'data': datetime.date(2025, 10, 19), 'Registro': 6}
 {'leitor': '6', 'livro': '4', 'data': datetime.date(2025, 10, 19), 'Registro': 8}
 {'leitor': '3', 'livro': '4', 'data': datetime.date(2025, 10, 19), 'Registro': 9}
-{'leitor': '8', 'livro': '11', 'data': datetime.date(2025, 10, 19), 'Registro': 10}
-{'leitor': '3', 'livro': '5', 'data': datetime.date(2025, 10, 19), 'Registro': 11}
-{'leitor': '9', 'livro': '8', 'data': datetime.date(2025, 10, 19), 'Registro': 12}

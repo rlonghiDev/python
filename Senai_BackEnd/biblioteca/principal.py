@@ -11,6 +11,8 @@ import datetime
 
 
 while True:
+    
+    ### Apresentação e Menu inicial ##
     print("""
           Bem vindo ao sistema gerenciador de livros !
           
@@ -54,14 +56,8 @@ while True:
 
     ### Final Cadastra Leitor ###
 
-    ### Relatório Livros ###
 
-    
-    
-    ####### Final Relatório Livros ####
-
-
-    ##### Relatório de Leitores ####
+    ##### Menu empréstimo ####
 
     
     if menu_principal == '3':
@@ -82,9 +78,7 @@ while True:
                 break
             
           
-                ####Implementar confirmação 
-                ####Implementar demonstrativo ficha empréstimo
-
+               
 
             if opcao == '1': # Informar Empréstimo 
                 registro_leitor = input("Digite o número de registro do Leitor\n")

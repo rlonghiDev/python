@@ -14,7 +14,7 @@ while True:
     
     ### Apresentação e Menu inicial ##
     print("""
-          Bem vindo ao sistema gerenciador de livros !
+          Bem vindo ao sistema gerenciador de Biblioteca !
           
           Escolha a opção desejada:
           1 - Cadastrar um livro
